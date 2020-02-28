@@ -4907,11 +4907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj",
+      "projectUniqueName": "c:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
       "projectName": "GymAPI",
-      "projectPath": "c:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj",
+      "projectPath": "c:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
       "packagesPath": "C:\\Users\\mlozanpl\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\obj\\",
+      "outputPath": "c:\\Users\\mlozanpl\\source\\repos\\GymAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

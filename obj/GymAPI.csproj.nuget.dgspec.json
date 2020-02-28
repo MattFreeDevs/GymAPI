@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj": {}
+    "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj": {
+    "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
         "projectName": "GymAPI",
-        "projectPath": "C:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\GymAPI.csproj",
+        "projectPath": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
         "packagesPath": "C:\\Users\\mlozanpl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mlozanpl\\source\\repos\\WebAPI\\GymAPI\\obj\\",
+        "outputPath": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
