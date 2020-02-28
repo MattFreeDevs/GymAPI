@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Metabolic",
+    "Description": "Metabolic",
+    "MaxCapacity": 10
+  },
+  {
+    "Id": 2,
+    "Name": "Boxing",
+    "Description": "Boxing",
+    "MaxCapacity": 25
+  },
+  {
+    "Id": 3,
+    "Name": "Weight Lifting",
+    "Description": "Weight Lifting",
+    "MaxCapacity": 5
+  },
+  {
+    "Id": 4,
+    "Name": "Kick-Boxing",
+    "Description": "Stand-up combat sport training",
+    "MaxCapacity": 20
+  }
+]
