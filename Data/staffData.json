@@ -1,0 +1,9 @@
+[
+    {
+        "Id": 1,
+        "Name": "Vicente",
+        "Type": "Trainer",
+        "Salary": 20000,
+        "ListActivities": ["Metabolix", "Boxing", "Weight Lifting"]
+    }
+]
