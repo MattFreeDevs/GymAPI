@@ -1,30 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj": {}
+    "C:\\Users\\Mloza\\source\\repos\\GymAPI\\GymAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj": {
+    "C:\\Users\\Mloza\\source\\repos\\GymAPI\\GymAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Mloza\\source\\repos\\GymAPI\\GymAPI.csproj",
         "projectName": "GymAPI",
-        "projectPath": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\GymAPI.csproj",
-        "packagesPath": "C:\\Users\\mlozanpl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mlozanpl\\source\\repos\\GymAPI\\obj\\",
+        "projectPath": "C:\\Users\\Mloza\\source\\repos\\GymAPI\\GymAPI.csproj",
+        "packagesPath": "C:\\Users\\Mloza\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mloza\\source\\repos\\GymAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\mlozanpl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Mloza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://steps.everis.com/nexus/repository/eversaas-private/": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -67,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -11,7 +11,7 @@ namespace GymAPI.Services
         private readonly List<Activity> _activities;
 
         public ActivityService(){
-            var jsonString = System.IO.File.ReadAllText("../GymAPI/Data/jsonData.json");
+            var jsonString = System.IO.File.ReadAllText("../GymAPI/Data/activityData.json");
             _activities = JsonSerializer.Deserialize<List<Activity>>(jsonString);
         }
 
@@ -29,7 +29,7 @@ namespace GymAPI.Services
                 WriteIndented = true
             };
             var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/jsonData.json",jsonString);
+            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
             return _activities;
         }
 
@@ -41,7 +41,7 @@ namespace GymAPI.Services
                 WriteIndented = true
             };
             var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/jsonData.json",jsonString);
+            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
 
             return _activities;
         }
@@ -52,7 +52,7 @@ namespace GymAPI.Services
                 WriteIndented = true
             };
             var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/jsonData.json",jsonString);
+            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
 
             return _activities;
         }
