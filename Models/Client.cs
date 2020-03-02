@@ -8,9 +8,9 @@ namespace GymAPI.Models
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
-        public string Sex { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public Enum Subscription { get; set; }
+        public Subscription Subscription { get; set; }
+        public int CurrentSessionsCount { get; set; }
     }
 }

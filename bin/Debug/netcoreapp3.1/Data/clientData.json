@@ -1,0 +1,25 @@
+[
+    {
+        "Id": 1,
+        "Name": "Matías",
+        "FirstName": "Lozano",
+        "SecondName": "Pla",
+        "Email": "gymapi@gmail.com",
+        "Phone": "600500400",
+        "Subscription": {
+            "Id": 1,
+            "ListActivities": [
+                {
+                    "Id": 1,
+                    "Name": "Metabolic",
+                    "Description": "Metabolic",
+                    "MaxCapacity": 10
+                }
+            ],
+            "Gender": "Male",
+            "Days": 3,
+            "Price": 38.00
+        },
+        "CurrentSessionsCount": 0
+    }
+]

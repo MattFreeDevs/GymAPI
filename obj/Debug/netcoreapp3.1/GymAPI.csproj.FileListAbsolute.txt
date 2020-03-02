@@ -51,7 +51,6 @@ C:\Users\mlozanpl\source\repos\WebAPI\GymAPI\obj\Debug\netcoreapp3.1\GymAPI.pdb
 C:\Users\mlozanpl\source\repos\WebAPI\GymAPI\bin\Debug\netcoreapp3.1\Data\jsonData.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\jsonData.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\GymAPI.exe
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\GymAPI.deps.json
@@ -152,3 +151,8 @@ C:\Users\Mloza\source\repos\GymAPI\obj\Debug\netcoreapp3.1\GymAPI.dll
 C:\Users\Mloza\source\repos\GymAPI\obj\Debug\netcoreapp3.1\GymAPI.pdb
 C:\Users\Mloza\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\activityData.json
 C:\Users\Mloza\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\staffData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\staffData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\activityData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\subscriptionData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\clientData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\sessionData.json

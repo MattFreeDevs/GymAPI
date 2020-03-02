@@ -4,6 +4,19 @@
         "Name": "Vicente",
         "Type": "Trainer",
         "Salary": 20000,
-        "ListActivities": ["Metabolix", "Boxing", "Weight Lifting"]
+        "ListActivities": [
+            {
+                "Id": 1,
+                "Name": "Metabolic",
+                "Description": "Metabolic",
+                "MaxCapacity": 10
+            },
+            {
+              "Id": 2,
+              "Name": "Boxing",
+              "Description": "Boxing",
+              "MaxCapacity": 25
+            }
+        ]
     }
 ]

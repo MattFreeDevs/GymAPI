@@ -15,12 +15,10 @@ namespace GymAPI.Controllers
     [Route("api/[controller]")]
     public class StaffController : ControllerBase
     {
-        private readonly ILogger<ActivityController> _logger;
         private readonly StaffService _staffService;
 
-        public StaffController(ILogger<ActivityController> logger, StaffService staffService)
+        public StaffController(StaffService staffService)
         {
-            _logger = logger;
             _staffService = staffService;
         }
         [HttpGet]

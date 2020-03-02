@@ -1,15 +1,14 @@
 using System;
 using System.Collections.Generic;
 
-
 namespace GymAPI.Models
 {
-    public class Staff
+    public class Subscription
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public double Salary { get; set; }
         public List<Activity> ListActivities { get; set; }
+        public string Gender { get; set; }
+        public int Days { get; set; }
+        public double Price { get; set; }
     }
 }

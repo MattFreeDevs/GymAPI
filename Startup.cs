@@ -29,6 +29,9 @@ namespace GymAPI
             services.AddControllers();
             services.AddSingleton<ActivityService>();
             services.AddSingleton<StaffService>();
+            services.AddSingleton<SubscriptionService>();
+            services.AddSingleton<ClientService>();
+            services.AddSingleton<SessionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

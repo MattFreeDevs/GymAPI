@@ -1,0 +1,16 @@
+[
+    {
+        "Id": 1,
+        "ListActivities": [
+            {
+                "Id": 1,
+                "Name": "Metabolic",
+                "Description": "Metabolic",
+                "MaxCapacity": 10
+            }
+        ],
+        "Gender": "Male",
+        "Days": 3,
+        "Price": 38.00
+    }
+]
