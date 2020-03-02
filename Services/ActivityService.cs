@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using GymAPI.Models;
+using GymAPI.Utils;
 
 namespace GymAPI.Services
 {
     public class ActivityService
     {
         private readonly List<Activity> _activities;
+        DataUtils dataUtils = new DataUtils(); 
 
         public ActivityService(){
-            var jsonString = System.IO.File.ReadAllText("../GymAPI/Data/activityData.json");
-            _activities = JsonSerializer.Deserialize<List<Activity>>(jsonString);
+            _activities = dataUtils.ReadActivityJson();
         }
 
         public IEnumerable<Activity> GetAll(){
@@ -25,35 +26,22 @@ namespace GymAPI.Services
 
         public IEnumerable<Activity> CreateActivity(Activity activity){
             _activities.Add(activity);
-            var options = new JsonSerializerOptions{
-                WriteIndented = true
-            };
-            var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
+            dataUtils.WriteActivityJson(_activities);
             return _activities;
         }
 
         public IEnumerable<Activity> UpdateActivity(int id, Activity activity){
             _activities.Remove(_activities.Where(x=> x.Id == id).FirstOrDefault());
+            activity.Id= id;
             _activities.Add(activity);
             _activities.OrderBy(x=>x.Id);
-            var options = new JsonSerializerOptions{
-                WriteIndented = true
-            };
-            var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
-
+            dataUtils.WriteActivityJson(_activities);
             return _activities;
         }
 
         public IEnumerable<Activity> DeleteActivity(int id){
             _activities.Remove(_activities.Where(x=> x.Id == id).FirstOrDefault());
-            var options = new JsonSerializerOptions{
-                WriteIndented = true
-            };
-            var jsonString = JsonSerializer.Serialize(_activities,options);
-            System.IO.File.WriteAllText("../GymAPI/Data/activityData.json",jsonString);
-
+            dataUtils.WriteActivityJson(_activities);
             return _activities;
         }
     }

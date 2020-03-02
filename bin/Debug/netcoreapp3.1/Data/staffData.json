@@ -1,22 +1,36 @@
 [
-    {
+  {
+    "Id": 1,
+    "Name": "Vicente",
+    "Type": "Trainer",
+    "Salary": 20000,
+    "ListActivities": [
+      {
         "Id": 1,
-        "Name": "Vicente",
-        "Type": "Trainer",
-        "Salary": 20000,
-        "ListActivities": [
-            {
-                "Id": 1,
-                "Name": "Metabolic",
-                "Description": "Metabolic",
-                "MaxCapacity": 10
-            },
-            {
-              "Id": 2,
-              "Name": "Boxing",
-              "Description": "Boxing",
-              "MaxCapacity": 25
-            }
-        ]
-    }
+        "Name": "Metabolic",
+        "Description": "Metabolic",
+        "MaxCapacity": 10
+      },
+      {
+        "Id": 2,
+        "Name": "Boxing",
+        "Description": "Boxing",
+        "MaxCapacity": 25
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Eusebio",
+    "Type": "Trainer",
+    "Salary": 18000,
+    "ListActivities": [
+      {
+        "Id": 2,
+        "Name": "Boxing",
+        "Description": "Boxing",
+        "MaxCapacity": 25
+      }
+    ]
+  }
 ]

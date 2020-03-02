@@ -156,3 +156,4 @@ C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\activityData.
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\subscriptionData.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\clientData.json
 C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\Data\sessionData.json
+C:\Users\mlozanpl\source\repos\GymAPI\bin\Debug\netcoreapp3.1\package-lock.json

@@ -22,5 +22,11 @@
     "Name": "Kick-Boxing",
     "Description": "Stand-up combat sport training",
     "MaxCapacity": 20
+  },
+  {
+    "Id": 5,
+    "Name": "Karate",
+    "Description": "Karate",
+    "MaxCapacity": 12
   }
 ]
