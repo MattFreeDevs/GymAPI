@@ -30,18 +30,18 @@ namespace GymAPI.Controllers
             _staffService.GetStaff(id);
 
         [HttpPost]
-        public IEnumerable<Staff> CreateStaff(Staff staff){
+        public Staff CreateStaff(Staff staff){
             var tmpId = _staffService.GetAll().Last().Id;
             staff.Id = tmpId+1;
             return _staffService.CreateStaff(staff);
         }
 
         [HttpPut("{Id}")]
-        public IEnumerable<Staff> UpdateStaff(int id, Staff staff) =>
+        public Staff UpdateStaff(int id, Staff staff) =>
             _staffService.UpdateStaff(id, staff);
 
         [HttpDelete("{Id}")]
-        public IEnumerable<Staff> DeleteStaff(int id) =>
+        public bool DeleteStaff(int id) =>
             _staffService.DeleteStaff(id);
     }
 }

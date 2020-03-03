@@ -14,8 +14,8 @@
   {
     "Id": 3,
     "Name": "Weight Lifting",
-    "Description": "Weight Lifting",
-    "MaxCapacity": 5
+    "Description": "Weight Lifting exercices",
+    "MaxCapacity": 12
   },
   {
     "Id": 4,
@@ -28,5 +28,11 @@
     "Name": "Karate",
     "Description": "Karate",
     "MaxCapacity": 12
+  },
+  {
+    "Id": 6,
+    "Name": "Spinning",
+    "Description": "Spinning",
+    "MaxCapacity": 20
   }
 ]

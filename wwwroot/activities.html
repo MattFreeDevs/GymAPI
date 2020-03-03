@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GymAPI</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+    <div class="pageContent">
+            <p1>ACTIVITIES</p1>
+            <br>
+            <div id="app">
+                <table id="actTable">
+                    <tr>
+                        <th style="text-align: left; width: 20px;">Id</th>
+                        <th style="text-align: left; width: 140px;">Name</th>
+                        <th style="text-align: left; width: 300px;">Description</th>
+                        <th style="text-align: left; width: 100px;">Capacity</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                        <tr v-for="activity in info">
+                            <td>{{ activity.id }}</td>
+                            <td>{{ activity.name }}</td>
+                            <td>{{ activity.description }}</td>
+                            <td>{{ activity.maxCapacity }}</td>
+                            <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteActivity(this)">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input id="Name" style="width: 120px;"></td>
+                            <td><input id="Description" style="width: 250px;"></td>
+                            <td><input id="Capacity" style="width: 30px;"></td>
+                            <td><button style="width: 98px;" onclick="createActivity()">Save</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data () {
+                    return {
+                        info: null
+                    }
+                },
+                mounted () {
+                    axios.get("api/Activity")
+                    .then(response => (this.info = response.data))
+                }
+            });
+            function createActivity(){
+                let name = document.getElementById("Name");
+                let description = document.getElementById("Description");
+                let capacity = document.getElementById("Capacity");
+                const data = {
+                    Name : name.value,
+                    Description: description.value,
+                    MaxCapacity: parseInt(capacity.value)
+                }
+                axios.post("api/Activity", data)
+                    .then(function(response){
+                        console.log(response.data);
+                        appendRow(response.data,"new");
+                    });
+                name.value = "";
+                description.value = "";
+                capacity.value = "";
+            };
+            function updateActivity(e){
+                let id = e.parentElement.parentElement.firstElementChild.textContent;
+                let name = document.getElementById("CurrentName");
+                let description = document.getElementById("CurrentDescription");
+                let capacity = document.getElementById("CurrentCapacity");
+                const data = {
+                    Name : name.value,
+                    Description: description.value,
+                    MaxCapacity: parseInt(capacity.value)
+                }
+                axios.put("api/Activity/" + id, data)
+                    .then(function(response){
+                        console.log(response.data);
+                        document.getElementById('actTable').getElementsByTagName('tbody')[1].deleteRow(id-1);
+                        appendRow(response.data,"update");
+                    });
+            }
+            function deleteActivity(e){
+                if(confirm("Are you sure you want to delete it?")){
+                    var id = e.parentElement.parentElement.firstElementChild.textContent;
+                    axios.delete("api/Activity/"+ id)
+                        .then(function (response){
+                            console.log(response);
+                            document.getElementById('actTable').getElementsByTagName('tbody')[1].deleteRow(id-1);
+                    });
+                }
+            }
+            function appendRow(activity, row){
+                var HtmlContent = `<tr>
+                            <td>`+activity.id+`</td>
+                            <td>`+activity.name+`</td>
+                            <td>`+activity.description+`</td>
+                            <td>`+activity.maxCapacity+`</td>
+                            <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteActivity(this)">Delete</button></td>
+                        </tr>`
+                var tableRef = document.getElementById('actTable').getElementsByTagName('tbody')[1];
+                if(row ="update")
+                    var newRow = tableRef.insertRow(activity.id-1);
+                else      
+                    var newRow = tableRef.insertRow(tableRef.rows.length-1);
+                newRow.innerHTML = HtmlContent;  
+            }
+            function ableRow(e){
+                var id = e.parentElement.parentElement.children[0].textContent;
+                var name = e.parentElement.parentElement.children[1].textContent;
+                var description= e.parentElement.parentElement.children[2].textContent;
+                var capacity = e.parentElement.parentElement.children[3].textContent;
+                var HtmlContent = `<tr>
+                            <td>`+id+`</td>
+                            <td><input id="CurrentName" style="width: 120px;" value="`+name+`"></td>
+                            <td><input id="CurrentDescription" style="width: 250px;" value="`+description+`"></td>
+                            <td><input id="CurrentCapacity" style="width: 30px;" value="`+capacity+`"></td>
+                            <td><button style="width: 98px;" onclick="updateActivity(this)">Save</button></td>
+                        </tr>`
+                document.getElementById('actTable').getElementsByTagName('tbody')[1].deleteRow(id-1);
+                var newRow = document.getElementById('actTable').getElementsByTagName('tbody')[1].insertRow(id-1);
+                newRow.innerHTML = HtmlContent;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

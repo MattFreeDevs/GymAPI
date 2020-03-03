@@ -1,44 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+<title>GymAPI</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <body>
-    ACTIVITIES
-    <div id="app">
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Capacity</th>
-            </tr>
-            <tbody v-for="activity in info">
-                <tr>
-                    <td>{{ activity.id }}</td>
-                    <td>{{ activity.name }}</td>
-                    <td>{{ activity.description }}</td>
-                    <td>{{ activity.maxCapacity }}</td>
-                </tr>
-            </tbody>
-        </table>
-  </div>
-  <script>
-      var app = new Vue({
-          el: '#app',
-          data () {
-              return {
-                info: null
-              }
-          },
-          mounted () {
-              axios.get("api/Activity")
-              .then(response => (this.info = response.data))
-          }
-      });
-  </script>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+    <div class="pageContent">
+        <p1>HOME</p1>
+    </div>
+        
 </body>
 
 </html>

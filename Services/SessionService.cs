@@ -17,7 +17,7 @@ namespace GymAPI.Services
         }
 
         public IEnumerable<Session> GetAll(){
-            return _sessions;
+            return _sessions.OrderBy(x=>x.Id);
         }
 
         public Session GetSession(int id){
@@ -34,8 +34,8 @@ namespace GymAPI.Services
             _sessions.Remove(_sessions.Where(x=> x.Id == id).FirstOrDefault());
             session.Id = id;
             _sessions.Add(session);
-            _sessions.OrderBy(x=>x.Id);
-            dataUtils.WriteSessionJson(_sessions);
+            List<Session> orderedList = new List<Session>(_sessions.OrderBy(x=>x.Id));
+            dataUtils.WriteSessionJson(orderedList);
             return _sessions;
         }
 

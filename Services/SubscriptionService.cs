@@ -17,7 +17,7 @@ namespace GymAPI.Services
         }
 
         public IEnumerable<Subscription> GetAll(){
-            return _subscription;
+            return _subscription.OrderBy(x=>x.Id);
         }
 
         public Subscription GetSubscription(int id){
@@ -34,8 +34,8 @@ namespace GymAPI.Services
             _subscription.Remove(_subscription.Where(x=> x.Id == id).FirstOrDefault());
             subscription.Id = id;
             _subscription.Add(subscription);
-            _subscription.OrderBy(x=>x.Id);
-            dataUtils.WriteSubscriptionJson(_subscription);
+            List<Subscription> orderedList = new List<Subscription>(_subscription.OrderBy(x=>x.Id));
+            dataUtils.WriteSubscriptionJson(orderedList);
             return _subscription;
         }
 

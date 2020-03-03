@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GymAPI</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+    <div class="pageContent">
+        <p1>STAFF</p1>
+        <br>
+        <div id="app">
+            <table id="actTable">
+                <tr>
+                    <th style="text-align: left; width: 20px;">Id</th>
+                    <th style="text-align: left; width: 140px;">Name</th>
+                    <th style="text-align: left; width: 140px;">Type</th>
+                    <th style="text-align: left; width: 100px;">Salary</th>
+                    <th style="text-align: left; width: 250px;">Activities</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr v-for="staff in info">
+                        <td>{{ staff.id }}</td>
+                        <td>{{ staff.name }}</td>
+                        <td>{{ staff.type }}</td>
+                        <td>{{ staff.salary }}</td>
+                        <td><span class="activitiesSpan" v-for="activity in staff.listActivities">{{ activity.name }} <input hidden="" v-model="activity.id"></span></span></td>
+                        <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteStaff(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input id="Name" style="width: 120px;"></td>
+                        <td><input id="Type" style="width: 120px;"></td>
+                        <td><input id="Salary" style="width: 50px;"></td>
+                        <td>
+                            <select id="Activities" style="width: 180px;" multiple>
+                            </select>
+                        </td>
+                        <td><button style="width: 98px;" onclick="createActivity()">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            var Activities=[];
+            var app = new Vue({
+                el: '#app',
+                data () {
+                    return {
+                        info: null
+                    }
+                },
+                mounted () {
+                    axios.get("api/Staff")
+                    .then(response => (this.info = response.data))
+                }
+            });
+            axios.get("api/Activity")
+                .then(function(response){
+                    var select = document.getElementById("Activities");
+                    response.data.forEach(element => {
+                        var option = document.createElement("option");
+                        option.text = element.name;
+                        option.value = element.id;
+                        select.add(option);
+                        Activities.push(element);
+                    });
+                });
+            
+        </script>
+    </div>
+</body>
+
+</html>

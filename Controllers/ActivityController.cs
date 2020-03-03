@@ -32,18 +32,18 @@ namespace GymAPI.Controllers
             _activityService.GetActivity(id);
 
         [HttpPost]
-        public IEnumerable<Activity> CreateActivity(Activity activity){
+        public Activity CreateActivity(Activity activity){
             var tmpId = _activityService.GetAll().Last().Id;
             activity.Id = tmpId+1;
             return _activityService.CreateActivity(activity);
         }
 
         [HttpPut("{Id}")]
-        public IEnumerable<Activity> UpdateActivity(int id, Activity activity) =>
+        public Activity UpdateActivity(int id, Activity activity) =>
             _activityService.UpdateActivity(id, activity);
 
         [HttpDelete("{Id}")]
-        public IEnumerable<Activity> DeleteActivity(int id) =>
+        public bool DeleteActivity(int id) =>
             _activityService.DeleteActivity(id);
     }
 }

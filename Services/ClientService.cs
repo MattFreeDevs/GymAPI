@@ -17,7 +17,7 @@ namespace GymAPI.Services
         }
 
         public IEnumerable<Client> GetAll(){
-            return _clients;
+            return _clients.OrderBy(x=>x.Id);
         }
 
         public Client GetClient(int id){
@@ -34,8 +34,8 @@ namespace GymAPI.Services
             _clients.Remove(_clients.Where(x=> x.Id == id).FirstOrDefault());
             client.Id = id;
             _clients.Add(client);
-            _clients.OrderBy(x=>x.Id);
-            dataUtils.WriteClientJson(_clients);
+            List<Client> orderedList = new List<Client>(_clients.OrderBy(x=>x.Id));
+            dataUtils.WriteClientJson(orderedList);
             return _clients;
         }
 

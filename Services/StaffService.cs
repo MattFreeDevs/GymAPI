@@ -17,31 +17,31 @@ namespace GymAPI.Services
         }
 
         public IEnumerable<Staff> GetAll() =>
-            _staff;
+            _staff.OrderBy(x=>x.Id);
 
         public Staff GetStaff(int id){
             return _staff.Where(x=>x.Id == id).FirstOrDefault();
         }
         
-        public IEnumerable<Staff> CreateStaff(Staff staff){
+        public Staff CreateStaff(Staff staff){
             _staff.Add(staff);
             dataUtils.WriteStaffJson(_staff);
-            return _staff;
+            return staff;
         }
 
-        public IEnumerable<Staff> UpdateStaff(int id, Staff staff){
+        public Staff UpdateStaff(int id, Staff staff){
             _staff.Remove(_staff.Where(x=> x.Id == id).FirstOrDefault());
             staff.Id = id;
             _staff.Add(staff);
-            _staff.OrderBy(x=>x.Id);
-            dataUtils.WriteStaffJson(_staff);
-            return _staff;
+            List<Staff> orderedList = new List<Staff>(_staff.OrderBy(x=>x.Id));
+            dataUtils.WriteStaffJson(orderedList);
+            return staff;
         }
 
-        public IEnumerable<Staff> DeleteStaff(int id){
+        public bool DeleteStaff(int id){
             _staff.Remove(_staff.Where(x=> x.Id == id).FirstOrDefault());
             dataUtils.WriteStaffJson(_staff);
-            return _staff;
+            return true;
         }
     }
 }
