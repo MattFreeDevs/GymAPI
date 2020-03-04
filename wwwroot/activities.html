@@ -11,7 +11,9 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="activities.html">Activities</a></li>
         <li><a href="staff.html">Staff</a></li>
-        <li style="float:right"><a class="active" href="#about">About</a></li>
+        <li><a href="client.html">Clients</a></li>
+        <li><a href="subscription.html">Subscriptions</a></li>
+        <li style="float:right"><a class="active" href="about.html">About</a></li>
     </ul>
     <div class="pageContent">
             <p1>ACTIVITIES</p1>
@@ -111,7 +113,7 @@
                             <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteActivity(this)">Delete</button></td>
                         </tr>`
                 var tableRef = document.getElementById('actTable').getElementsByTagName('tbody')[1];
-                if(row ="update")
+                if(row == "update")
                     var newRow = tableRef.insertRow(activity.id-1);
                 else      
                     var newRow = tableRef.insertRow(tableRef.rows.length-1);

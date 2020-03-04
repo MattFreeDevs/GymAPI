@@ -11,13 +11,15 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="activities.html">Activities</a></li>
         <li><a href="staff.html">Staff</a></li>
-        <li style="float:right"><a class="active" href="#about">About</a></li>
+        <li><a href="client.html">Clients</a></li>
+        <li><a href="subscription.html">Subscriptions</a></li>
+        <li style="float:right"><a class="active" href="about.html">About</a></li>
     </ul>
     <div class="pageContent">
         <p1>STAFF</p1>
         <br>
         <div id="app">
-            <table id="actTable">
+            <table id="staffTable">
                 <tr>
                     <th style="text-align: left; width: 20px;">Id</th>
                     <th style="text-align: left; width: 140px;">Name</th>
@@ -33,7 +35,7 @@
                         <td>{{ staff.name }}</td>
                         <td>{{ staff.type }}</td>
                         <td>{{ staff.salary }}</td>
-                        <td><span class="activitiesSpan" v-for="activity in staff.listActivities">{{ activity.name }} <input hidden="" v-model="activity.id"></span></span></td>
+                        <td><span class="activitiesSpan" v-for="activity in staff.listActivities">{{ activity.name }} <input hidden="" v-model="activity.id"></span></td>
                         <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteStaff(this)">Delete</button></td>
                     </tr>
                     <tr>
@@ -45,7 +47,7 @@
                             <select id="Activities" style="width: 180px;" multiple>
                             </select>
                         </td>
-                        <td><button style="width: 98px;" onclick="createActivity()">Save</button></td>
+                        <td><button style="width: 98px;" onclick="createStaff()">Save</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -75,7 +77,63 @@
                         Activities.push(element);
                     });
                 });
-            
+            function createStaff(){
+                let name = document.getElementById("Name");
+                let type = document.getElementById("Type");
+                let salary = document.getElementById("Salary");
+                let activities = [];
+                let selectActivities = document.getElementById("Activities")
+                for (let i = 0; i < selectActivities.length; i++) {
+                    if (selectActivities[i].selected)
+                        activities.push(Activities.find(x=>x.id == selectActivities[i].value))
+                }
+                const data = {
+                    Name: name.value,
+                    Type: type.value,
+                    Salary: parseInt(salary.value),
+                    ListActivities: activities
+                }
+                axios.post("api/Staff",data)
+                    .then(function(response) {
+                        appendRow(response.data,"new");
+                        name.value = "";
+                        type.value = "";
+                        salary.value = "";
+                        for (let i = 0; i < selectActivities.length; i++) {
+                            selectActivities[i].selected = false;
+                        }
+                    });
+            }
+            function deleteStaff(e){
+                if(confirm("Are you sure you want to delete it?")){
+                    var id = e.parentElement.parentElement.firstElementChild.textContent;
+                    axios.delete("api/Staff/"+ id)
+                        .then(function (response){
+                            console.log(response);
+                            document.getElementById('staffTable').getElementsByTagName('tbody')[1].deleteRow(id-1);
+                    });
+                }
+            }
+            function appendRow(staff, row){
+                var HtmlContent = `<tr>
+                        <td>`+ staff.id+`</td>
+                        <td>`+ staff.name+`</td>
+                        <td>`+ staff.type+`</td>
+                        <td>`+ staff.salary+`</td>
+                        <td>`
+                staff.listActivities.forEach(element =>
+                    HtmlContent += `<span class="activitiesSpan">`+element.name+` <input hidden="" value="`+element.id+`"></span>`
+                );
+                HtmlContent += `</td>
+                        <td><button onclick="ableRow(this)">Edit</button> <button onclick="deleteStaff(this)">Delete</button></td>
+                    </tr>`
+                var tableRef = document.getElementById('staffTable').getElementsByTagName('tbody')[1];
+                if(row == "update")
+                    var newRow = tableRef.insertRow(staff.id-1);
+                else      
+                    var newRow = tableRef.insertRow(tableRef.rows.length-1);
+                newRow.innerHTML = HtmlContent;  
+            }
         </script>
     </div>
 </body>

@@ -32,5 +32,25 @@
         "MaxCapacity": 25
       }
     ]
+  },
+  {
+    "Id": 3,
+    "Name": "Pedro",
+    "Type": "Trainer",
+    "Salary": 12200,
+    "ListActivities": [
+      {
+        "Id": 3,
+        "Name": "Weight Lifting",
+        "Description": "Weight Lifting exercices",
+        "MaxCapacity": 12
+      },
+      {
+        "Id": 4,
+        "Name": "Kick-Boxing",
+        "Description": "Stand-up combat sport training",
+        "MaxCapacity": 20
+      }
+    ]
   }
 ]
